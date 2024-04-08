@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:42:17 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/08 00:47:37 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/08 02:42:43 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,8 @@ void	check_put(char c, int y, int x, t_map *so)
 	else
 		s = PLAYER;
 	xpm_put(so, BLACK, 0, 0);
+	if (so->move == 0)
+		put_string(so);
 	xpm_put(so, s, y, x);
 }
 
@@ -61,35 +63,6 @@ int	xclose(int key, t_map *so)
 	else if (key == 13 || key == 126)
 		move_player(so, 0, -1);
 	return (0);
-}
-
-void	sprite_coin(t_map *so)
-{
-	static int	t;
-	static int	j = '1';
-	static char	str[] = "textures/coin_.xpm";
-	int			x;
-	int			y;
-
-	if (t++ == 1500)
-	{
-		y = -1;
-		while (so->map[++y])
-		{
-			x = -1;
-			while (so->map[y][++x])
-			{
-				if (so->map[y][x] == 'C')
-				{
-					str[13] = j;
-					xpm_put (so, str, y, x);
-				}
-			}
-		}
-		t = 0;
-		if (++j == '9')
-			j = '1';
-	}
 }
 
 int	moves(t_map *so)

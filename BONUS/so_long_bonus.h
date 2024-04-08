@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:44:16 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/08 00:24:31 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/08 02:20:22 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,5 +77,7 @@ int		ft_nb_line(char **strs);
 void	xpm_put(t_map *so, char *s, int y, int x);
 void	enemy_patrol(t_map *so);
 void	move_player(t_map *so, int x, int y);
+void	sprite_coin(t_map *so);
+void	put_string(t_map *so);
 
 #endif

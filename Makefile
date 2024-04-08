@@ -18,6 +18,7 @@ SRCS_B	=	BONUS/main_bonus.c \
 			BONUS/get_pos_bonus.c \
 			BONUS/ft_count_bonus.c \
 			BONUS/load_wind_bonus.c \
+			BONUS/sprite_coin.c \
 			BONUS/flood_fill_bonus.c \
 			BONUS/errorhandle_bonus.c \
 			BONUS/memfree_bonus.c \
