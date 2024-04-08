@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 11:08:18 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/08 02:54:02 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/08 03:15:44 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -50,6 +50,14 @@ int	check_move(t_map *so, int x, int y)
 
 void	move_player(t_map *so, int x, int y)
 {
+	if (so->map[so->y + y][so->x + x] == 'E' && so->nc == 0)
+	{
+		so->move += 1;
+		put_string(so);
+		mlx_do_sync(so->mlx);
+		ft_printf("<<<<-YOU WIN->>>\n");
+		clear_mlx(so);
+	}
 	if (check_move(so, x, y))
 	{
 		so->move++;
@@ -61,14 +69,5 @@ void	move_player(t_map *so, int x, int y)
 			xpm_put(so, PLAYER_LEFT, so->y, so->x);
 		else
 			xpm_put(so, PLAYER, so->y, so->x);
-	}
-	else if (so->map[so->y + y][so->x + x] == 'E' && so->nc == 0)
-	{
-		so->move += 1;
-		put_string(so);
-		ft_printf ("5\n");
-		sleep (2);
-		ft_printf("<<<<-YOU WIN->>>\n");
-		clear_mlx(so);
 	}
 }
