@@ -1,0 +1,117 @@
+/* ************************************************************************** */
+/*                                                                            */
+/*                                                        :::      ::::::::   */
+/*   load_wind_bonus.c                                  :+:      :+:    :+:   */
+/*                                                    +:+ +:+         +:+     */
+/*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
+/*                                                +#+#+#+#+#+   +#+           */
+/*   Created: 2024/03/29 21:42:17 by ezahiri           #+#    #+#             */
+/*   Updated: 2024/04/08 00:47:37 by ezahiri          ###   ########.fr       */
+/*                                                                            */
+/* ************************************************************************** */
+
+#include "so_long_bonus.h"
+
+void	check_put(char c, int y, int x, t_map *so)
+{
+	char	*s;
+
+	if (c == '1')
+		s = WALL;
+	else if (c == '0')
+		s = SPACE;
+	else if (c == 'E')
+		s = EXIT;
+	else if (c == 'N')
+		s = ENEMY_F;
+	else if (c == 'C')
+		s = COIN1;
+	else
+		s = PLAYER;
+	xpm_put(so, BLACK, 0, 0);
+	xpm_put(so, s, y, x);
+}
+
+void	render_map(t_map *so)
+{
+	char	**strs;
+	int		x;
+	int		y;
+
+	y = -1;
+	strs = so->map;
+	while (strs[++y])
+	{
+		x = -1;
+		while (strs[y][++x])
+			check_put(strs[y][x], y, x, so);
+	}
+}
+
+int	xclose(int key, t_map *so)
+{
+	if (key == 53)
+		clear_mlx(so);
+	else if (key == 0 || key == 123)
+		move_player(so, -1, 0);
+	else if (key == 1 || key == 125)
+		move_player(so, 0, 1);
+	else if (key == 2 || key == 124)
+		move_player(so, 1, 0);
+	else if (key == 13 || key == 126)
+		move_player(so, 0, -1);
+	return (0);
+}
+
+void	sprite_coin(t_map *so)
+{
+	static int	t;
+	static int	j = '1';
+	static char	str[] = "textures/coin_.xpm";
+	int			x;
+	int			y;
+
+	if (t++ == 1500)
+	{
+		y = -1;
+		while (so->map[++y])
+		{
+			x = -1;
+			while (so->map[y][++x])
+			{
+				if (so->map[y][x] == 'C')
+				{
+					str[13] = j;
+					xpm_put (so, str, y, x);
+				}
+			}
+		}
+		t = 0;
+		if (++j == '9')
+			j = '1';
+	}
+}
+
+int	moves(t_map *so)
+{
+	sprite_coin(so);
+	enemy_patrol(so);
+	return (0);
+}
+
+void	load_wind(t_map *so)
+{
+	so->mlx = mlx_init();
+	if (!so->mlx)
+		return ;
+	so->win = mlx_new_window(so->mlx, 50 * so->lx, 50 * so->ly, "wind00");
+	if (!so->win)
+		return ;
+	so->move = 0;
+	so->nn = ft_count(so->map, 'N');
+	render_map(so);
+	mlx_hook(so->win, 02, 0, xclose, so);
+	mlx_hook(so->win, 17, 0, clear_mlx, so);
+	mlx_loop_hook(so->mlx, moves, so);
+	mlx_loop(so->mlx);
+}
