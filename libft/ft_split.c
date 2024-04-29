@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:33:11 by ezahiri           #+#    #+#             */
-/*   Updated: 2023/11/15 10:41:31 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/29 16:35:24 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -31,7 +31,7 @@ static void	*memfree(char **strs, int k)
 	while (k--)
 		free(strs[k]);
 	free(strs);
-	return (0);
+	return (NULL);
 }
 
 static char	**splited(char **strs, const char *s, char c)
@@ -69,7 +69,7 @@ char	**ft_split(char const *s, char c)
 		return (0);
 	strs = (char **)malloc (sizeof(char *) * (count_words(s, c) + 1));
 	if (!strs)
-		return (0);
+		return (NULL);
 	strs = splited(strs, s, c);
 	return (strs);
 }

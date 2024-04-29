@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 15:05:18 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/03/29 21:53:36 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/29 17:18:35 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,7 +81,7 @@ char	*get_next_line(int fd)
 			return (free(buffer), free(all), all = NULL, NULL);
 		buffer[red] = '\0';
 		all = ft_strjoin(all, buffer);
-		if (!all[0])
+		if (!all || !all[0])
 			return (free(buffer), free(all), all = NULL, NULL);
 	}
 	free(buffer);
