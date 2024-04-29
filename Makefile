@@ -61,6 +61,6 @@ clean:
 
 fclean: clean
 	@rm -f $(NAME) $(NAME_BONUS)
-	@make -C libft/ 
+	@make -C libft/ fclean
 
 re : fclean all
