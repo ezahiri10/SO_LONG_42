@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/11/06 10:33:11 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/29 16:35:24 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/29 18:26:01 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -66,7 +66,7 @@ char	**ft_split(char const *s, char c)
 	char	**strs;
 
 	if (!s)
-		return (0);
+		return (NULL);
 	strs = (char **)malloc (sizeof(char *) * (count_words(s, c) + 1));
 	if (!strs)
 		return (NULL);
