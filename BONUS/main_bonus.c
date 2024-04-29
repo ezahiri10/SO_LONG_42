@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:03:35 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/08 02:33:28 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/29 16:24:02 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -75,7 +75,7 @@ void	parse(t_map *info, char *str)
 
 	if (check_ext(str))
 		exit(1);
-	s = parsing(str);
+	s = read_check(str);
 	info->map = ft_split(s, '\n');
 	if (!info->map)
 		error_crash(info->map, s, "map vide\n", 1);

@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:44:16 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/08 02:20:22 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/29 16:21:55 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -64,7 +64,7 @@ typedef struct s_map
 	int		move;
 }	t_map;
 
-char	*parsing(char *name);
+char	*read_check(char *name);
 int		memfree(char **strs);
 int		check_elem(char **strs, char *s);
 void	get_pos(t_map *info, char **strs);

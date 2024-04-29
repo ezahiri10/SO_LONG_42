@@ -3,7 +3,7 @@ CC = cc
 CFLAGS = -Wall -Wextra -Werror -Wunreachable-code
 
 SRCS	=	srcs/main.c \
-			srcs/parsing2.c\
+			srcs/parsing.c\
 			srcs/get_pos.c \
 			srcs/ft_count.c \
 			srcs/load_wind.c \
@@ -14,7 +14,7 @@ SRCS	=	srcs/main.c \
 			srcs/ft_abbreviations.c \
 
 SRCS_B	=	BONUS/main_bonus.c \
-			BONUS/parsing2_bonus.c\
+			BONUS/parsing_bonus.c\
 			BONUS/get_pos_bonus.c \
 			BONUS/ft_count_bonus.c \
 			BONUS/load_wind_bonus.c \
