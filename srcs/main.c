@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 21:12:54 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/29 16:20:37 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/29 18:16:55 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -69,13 +69,13 @@ int	is_wall(char **strs, char *s)
 	return (0);
 }
 
-void	parse(t_map *info, char *str)
+void	parse(t_map *info, char *name)
 {
 	char	*s;
 
-	if (check_ext(str))
+	if (check_ext(name))
 		exit(1);
-	s = read_check(str);
+	s = read_check(name);
 	info->map = ft_split(s, '\n');
 	if (!info->map)
 		error_crash(info->map, s, "map vide\n", 1);

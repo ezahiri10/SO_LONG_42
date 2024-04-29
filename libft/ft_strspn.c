@@ -6,12 +6,11 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/11 10:43:54 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/08 00:18:35 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/29 18:17:47 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "libft.h"
-#include <libc.h>
 
 size_t	ft_strspn(const char *s, const char *set)
 {
