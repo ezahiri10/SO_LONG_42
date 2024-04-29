@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 23:52:58 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/29 18:24:55 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/29 20:03:43 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,7 +34,7 @@ int	check_elem(char **strs, char *s)
 
 int	ft_check(char *s)
 {
-	int	len;
+	size_t	len;
 
 	len = ft_strlen (s) - 1;
 	if (s[0] != '1')
@@ -64,15 +64,14 @@ char	*read_check(char *name)
 		if (!s)
 			break ;
 		if (!ft_check(s))
-		{
-			get_next_line(-1);
 			ft_exit(fd, s, all);
-		}
 		all = ft_strjoin(all, s);
 		if (!all)
-			ft_exit(fd, s, get_next_line(-1));
+			ft_exit(fd, s, NULL);
 		free(s);
 	}
+	if (all[ft_strlen(all) - 1] == '\n')
+		ft_exit(fd, s, all);
 	close(fd);
 	return (all);
 }

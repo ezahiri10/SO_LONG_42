@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/10/30 14:36:05 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/08 00:49:48 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/29 20:07:19 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,7 @@ size_t	ft_strspn(const char *s, const char *set);
 //get_next_line
 
 # ifndef BUFFER_SIZE
-#  define BUFFER_SIZE 12
+#  define BUFFER_SIZE 1
 # endif
 
 char	*get_next_line(int fd);
