@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:44:16 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/29 16:21:55 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/29 21:43:13 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -54,7 +54,7 @@ typedef struct s_map
 	void	*mlx;
 	void	*win;
 	void	*img;
-	t_enemy	en[3];
+	t_enemy	en[5];
 	int		lx;
 	int		ly;
 	int		x;

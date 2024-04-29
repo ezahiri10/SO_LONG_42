@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:45:40 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/29 20:11:40 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/29 21:47:44 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ int	check_elem(char **strs, char *s)
 		error_crash(strs, s, "error player\n", 0);
 	else if (ft_count(strs, 'E') != 1)
 		error_crash(strs, s, "error exit\n", 0);
+	else if (ft_count(strs, 'N') > 5)
+		error_crash(strs, s, "error in rules of the game\n", 0);
 	else if (ft_count(strs, 'C') < 1)
 		error_crash(strs, s, "error collictibl\n", 0);
 	return (0);
