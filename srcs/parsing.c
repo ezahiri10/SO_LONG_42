@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 23:52:58 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/29 18:14:58 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/29 18:20:05 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,7 +43,7 @@ int	ft_check(char *s)
 		return (0);
 	else if (s[len] != '\n' && s[len] != '1')
 		return (0);
-	else if (!(ft_strspn(s, "01PCE\n") == ft_strlen(s)))
+	else if (!(ft_strspn(s, "01PCE\n") == len + 1))
 		return (0);
 	return (1);
 }
