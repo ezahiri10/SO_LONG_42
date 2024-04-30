@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:45:40 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/30 10:36:59 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/30 10:49:47 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -72,7 +72,7 @@ char	*read_check(char *name)
 			ft_exit(fd, s, all);
 		free(s);
 	}
-	if (all[ft_strlen(all) - 1] == '\n')
+	if (!all || all[ft_strlen(all) - 1] == '\n')
 		ft_exit(fd, s, all);
 	close(fd);
 	return (all);
