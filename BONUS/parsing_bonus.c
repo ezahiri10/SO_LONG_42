@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:45:40 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/30 09:59:38 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/30 10:36:59 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,6 +19,19 @@ int	ft_exit(int fd, char *s, char *all)
 	free(s);
 	free(all);
 	exit(1);
+}
+
+int	check_elem(char **strs, char *s)
+{
+	if (ft_count(strs, 'P') != 1)
+		error_crash(strs, s, "error player\n", 0);
+	else if (ft_count(strs, 'E') != 1)
+		error_crash(strs, s, "error exit\n", 0);
+	else if (ft_count(strs, 'N') > 5)
+		error_crash(strs, s, "error in rules of the game\n", 0);
+	else if (ft_count(strs, 'C') < 1)
+		error_crash(strs, s, "error collictibl\n", 0);
+	return (0);
 }
 
 int	ft_check(char *s)
@@ -35,19 +48,6 @@ int	ft_check(char *s)
 	else if (!(ft_strspn(s, "01PCEN\n") == ft_strlen(s)))
 		return (0);
 	return (1);
-}
-
-int	check_elem(char **strs, char *s)
-{
-	if (ft_count(strs, 'P') != 1)
-		error_crash(strs, s, "error player\n", 0);
-	else if (ft_count(strs, 'E') != 1)
-		error_crash(strs, s, "error exit\n", 0);
-	else if (ft_count(strs, 'N') > 5)
-		error_crash(strs, s, "error in rules of the game\n", 0);
-	else if (ft_count(strs, 'C') < 1)
-		error_crash(strs, s, "error collictibl\n", 0);
-	return (0);
 }
 
 char	*read_check(char *name)
