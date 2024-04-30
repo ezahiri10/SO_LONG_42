@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:45:40 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/29 21:47:44 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/04/30 09:59:38 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -56,6 +56,7 @@ char	*read_check(char *name)
 	char	*s;
 	char	*all;
 
+	all = NULL;
 	fd = open(name, O_RDONLY);
 	if (fd == -1)
 		exit(2);
