@@ -47,7 +47,7 @@ BONUS/%.o: BONUS/%.c BONUS/so_long_bonus.h
 $(NAME) : $(OBJS) $(DIR_LIB)
 	@$(CC) -lmlx -framework OpenGL -framework AppKit  $(CFLAGS) $^ -o $(NAME) $(DIR_LIB)
 
-$(NAME_BONUS) :$(OBJS_B)
+$(NAME_BONUS) :$(OBJS_B) $(DIR_LIB)
 	@$(CC) -lmlx -framework OpenGL -framework AppKit  $(CFLAGS) $(OBJS_B) -o $(NAME_BONUS) $(DIR_LIB)
 
 bonus: $(NAME_BONUS)
