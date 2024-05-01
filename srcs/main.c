@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 21:12:54 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/05/01 21:21:57 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/01 21:32:30 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,7 +27,7 @@ int	check_ext(char *s)
 	return (0);
 }
 
-int	is_traing(char **strs, char *s)
+int	is_rectangle(char **strs, char *s)
 {
 	int		i;
 	size_t	len;
@@ -56,9 +56,7 @@ int	is_wall(char **strs, char *s)
 			error_crash(strs, s, "error wall\n", 0);
 		i++;
 	}
-	while (strs[len])
-		len++;
-	len -= 1;
+	len = ft_nb_line(strs) - 1;
 	i = 0;
 	while (strs[0][i])
 	{
@@ -79,7 +77,7 @@ void	parse(t_map *info, char *name)
 	info->map = ft_split(s, '\n');
 	if (!info->map)
 		error_crash(info->map, s, "map vide\n", 1);
-	if (is_traing(info->map, s) || is_wall(info->map, s) \
+	if (is_rectangle(info->map, s) || is_wall(info->map, s) \
 	|| check_elem(info->map, s))
 		exit(1);
 	info->copy = ft_split(s, '\n');
