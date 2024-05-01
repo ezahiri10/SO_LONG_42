@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 21:12:54 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/29 20:03:27 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/01 21:21:57 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -86,8 +86,6 @@ void	parse(t_map *info, char *name)
 	free(s);
 	info->lx = ft_strlen(info->map[0]);
 	info->ly = ft_nb_line(info->map);
-	if (info->lx == info->ly)
-		exit(2);
 	get_pos(info, info->map);
 	info->nc = ft_count(info->map, 'C');
 	if (!check_ff(info->copy, info->y, info->x))
