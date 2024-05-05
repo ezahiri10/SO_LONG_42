@@ -11,7 +11,7 @@ SRCS	=	srcs/main.c \
 			srcs/memfree.c \
 			srcs/errorhandle.c \
 			srcs/load_wind.c \
-			srcs/ft_abbreviations.c \
+			srcs/xpm_put.c \
 
 SRCS_B	=	BONUS/main_bonus.c \
 			BONUS/parsing_bonus.c\
@@ -22,7 +22,7 @@ SRCS_B	=	BONUS/main_bonus.c \
 			BONUS/flood_fill_bonus.c \
 			BONUS/errorhandle_bonus.c \
 			BONUS/memfree_bonus.c \
-			BONUS/ft_abbreviations_bonus.c \
+			BONUS/xpm_put_bonus.c \
 			BONUS/enemy_patrol_bonus.c \
 			BONUS/move_player_bonus.c \
 			
