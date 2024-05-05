@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:42:17 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/05/05 20:06:42 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/05 20:15:02 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -83,7 +83,7 @@ void	load_wind(t_map *so)
 	so->move = 0;
 	so->nn = ft_count(so->map, 'N');
 	render_map(so);
-	mlx_hook(so->win, 02, 0, ft_key, so);
+	mlx_hook(so->win, 02, 0, ft_key, so); 
 	mlx_hook(so->win, 17, 0, clear_mlx, so);
 	mlx_loop_hook(so->mlx, moves, so);
 	mlx_loop(so->mlx);
