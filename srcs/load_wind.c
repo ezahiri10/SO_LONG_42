@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:40:00 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/05/05 14:33:21 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/05 14:38:30 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -49,7 +49,7 @@ void	move_player(t_map *so, int x, int y)
 {
 	if (so->map[so->y + y][so->x + x] == '1')
 		return ;
-	else if (so->map[so->y + y][so->x + x] == 'E' && so->nc <= 0)
+	else if (so->map[so->y + y][so->x + x] == 'E' && so->nc == 0)
 	{
 		ft_printf("move->%d\n<<<<-YOU WIN->>>\n", ++so->move);
 		clear_mlx(so);
