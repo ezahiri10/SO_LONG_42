@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:40:00 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/05/05 13:26:50 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/05 14:33:21 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -73,7 +73,7 @@ void	move_player(t_map *so, int x, int y)
 		xpm_put(so, PLAYER, so->y, so->x);
 }
 
-int	xclose(int key, t_map *so)
+int	ft_key(int key, t_map *so)
 {
 	if (key == 53)
 		clear_mlx(so);
@@ -98,6 +98,6 @@ void	load_wind(t_map *so)
 		exit(memfree(so->map));
 	so->move = 0;
 	render_map(so);
-	mlx_hook(so->win, 02, 0, xclose, so);
+	mlx_hook(so->win, 02, 0, ft_key, so);
 	mlx_loop(so->mlx);
 }
