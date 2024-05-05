@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:03:35 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/05/01 21:48:28 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/05 16:09:50 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -92,6 +92,8 @@ void	parse(t_map *info, char *str)
 	info->nc = ft_count(info->map, 'C');
 	if (!check_ff(info->copy, info->y, info->x))
 		exit(memfree(info->map));
+	if (info->lx >= 164 || info->ly >= 164)
+		error_crash(info->map, NULL, "The map size is very larg\n", 0);
 }
 
 int	main(int ac, char **av)
