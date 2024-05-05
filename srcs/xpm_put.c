@@ -1,12 +1,12 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_abbreviations.c                                 :+:      :+:    :+:   */
+/*   xpm_put.c                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/03 09:03:14 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/05/05 13:37:49 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/05 15:10:58 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,4 +24,5 @@ void	xpm_put(t_map *so, char *s, int y, int x)
 		exit(1);
 	}
 	mlx_put_image_to_window(so->mlx, so->win, so->img, x * 50, y * 50);
+	mlx_destroy_image(so->mlx, so->img);
 }
