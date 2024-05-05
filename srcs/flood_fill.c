@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/15 18:29:38 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/07 23:56:02 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/05 13:26:43 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -32,13 +32,13 @@ int	check_ff(char **map, int y, int x)
 	if (ft_count(map, 'E') != 0)
 	{
 		memfree(map);
-		write (2, "Error\nplayer can't reach to exit", 33);
+		ft_putstr_fd("Error\nplayer can't reach to exit", 2);
 		return (0);
 	}
 	else if (ft_count(map, 'C') != 0)
 	{
 		memfree(map);
-		write (2, "Error\nplayer can't reach to collecteble", 40);
+		ft_putstr_fd ("Error\nplayer can't reach to collecteble", 2);
 		return (0);
 	}
 	memfree(map);
