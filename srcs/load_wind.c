@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:40:00 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/05/05 15:04:36 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/05 16:32:23 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,10 +57,7 @@ void	move_player(t_map *so, int x, int y)
 	else if (so->map[so->y + y][so->x + x] == 'E')
 		return ;
 	else if (so->map[so->y + y][so->x + x] == 'C' )
-	{
-		so->map[so->y + y][so->x + x] = '0';
 		so->nc--;
-	}
 	so->map[so->y][so->x] = '0';
 	so->map[so->y + y][so->x + x] = 'P';
 	ft_printf("move->%d\n", ++so->move);
