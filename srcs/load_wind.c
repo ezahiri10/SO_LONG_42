@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/20 01:40:00 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/05/05 16:32:23 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/05 17:14:11 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -96,5 +96,6 @@ void	load_wind(t_map *so)
 	so->move = 0;
 	render_map(so);
 	mlx_hook(so->win, 02, 0, ft_key, so);
+	mlx_hook(so->win, 17, 0, clear_mlx, so);
 	mlx_loop(so->mlx);
 }

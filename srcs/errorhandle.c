@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/24 15:49:18 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/05/05 16:11:11 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/05 17:12:47 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,9 +25,10 @@ int	error_crash(char **strs, char *s, char *err, char mod)
 	exit(1);
 }
 
-void	clear_mlx(t_map *so)
+int	clear_mlx(t_map *so)
 {
 	memfree(so->map);
 	mlx_destroy_window(so->mlx, so->win);
 	exit(0);
+	return (0);
 }

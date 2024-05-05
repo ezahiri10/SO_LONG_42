@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 21:26:01 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/29 16:19:59 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/05 17:12:57 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -48,7 +48,7 @@ int		ft_count(char **strs, char c);
 int		check_ff(char **map, int y, int x);
 void	load_wind(t_map *so);
 int		error_crash(char **strs, char *s, char *err, char mod);
-void	clear_mlx(t_map *so);
+int		clear_mlx(t_map *so);
 int		ft_nb_line(char **strs);
 void	xpm_put(t_map *so, char *s, int y, int x);
 
