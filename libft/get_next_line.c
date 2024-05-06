@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2023/12/12 15:05:18 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/29 17:18:35 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/06 15:06:09 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,6 +51,8 @@ static char	*red_line(char *all)
 	if (all[len] == '\n')
 		len++;
 	line = (char *)malloc(sizeof(char) * len + 1);
+	if (!line)
+		return (NULL);
 	i = 0;
 	while (i < len)
 	{
