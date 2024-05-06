@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/06 11:08:18 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/05/05 14:42:21 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/06 11:48:46 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,11 @@ void	put_string(t_map *so)
 
 	s = ft_itoa(so->move);
 	if (!s)
-		clear_mlx(so);
+	{
+		memfree(so->map);
+		mlx_destroy_window(so->mlx, so->win);
+		exit(1);
+	}
 	xpm_put(so, BLACK, 0, 0);
 	mlx_string_put(so->mlx, so->win, 60, 20, 0xFFFFFFFF, s);
 	free(s);
