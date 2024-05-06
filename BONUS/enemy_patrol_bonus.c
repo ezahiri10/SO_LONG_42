@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 00:25:50 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/05/06 10:05:23 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/06 11:13:30 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -61,7 +61,7 @@ void	is_valid(int y, int x, t_map *so, int i)
 	static int	m;
 	char		**s;
 
-	m = clock();
+	m = rand();
 	s = so->map;
 	if ((s[y - 1][x] == '0' || s[y - 1][x] == 'P') && m % 4 == 0)
 		(set_map(so, -1, 0, i), so->en[i].to = 1);

@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/29 21:44:16 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/29 21:43:13 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/06 11:13:40 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,7 +16,6 @@
 # include <stdlib.h>
 # include <mlx.h>
 # include <fcntl.h>
-# include <time.h>
 # include "../libft/libft.h"
 
 # define WALL "textures/WALL.xpm"
