@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/04/05 00:25:50 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/04/08 00:25:05 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/06 10:05:23 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -39,7 +39,6 @@ void	postion_enemy(t_map *so)
 		y++;
 	}
 }
-void	is_valid(int y, int x, t_map *so, int i);
 
 void	set_map(t_map *so, int b, int a, int i)
 {
