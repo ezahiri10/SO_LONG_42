@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 21:12:54 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/05/05 16:09:14 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/06 15:35:22 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,11 +17,9 @@ int	check_ext(char *s)
 	int	len;
 
 	len = ft_strlen(s);
-	if (len < 4)
-		return (1);
-	if (ft_strcmp(s + len - 4, ".ber"))
+	if (len < 4 || ft_strcmp(s + len - 4, ".ber"))
 	{
-		ft_printf ("error extention\n");
+		ft_putendl_fd("Error in extention", 2);
 		return (1);
 	}
 	return (0);

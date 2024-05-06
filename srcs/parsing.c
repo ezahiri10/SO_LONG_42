@@ -6,7 +6,7 @@
 /*   By: ezahiri <ezahiri@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/03/10 23:52:58 by ezahiri           #+#    #+#             */
-/*   Updated: 2024/05/01 21:39:16 by ezahiri          ###   ########.fr       */
+/*   Updated: 2024/05/06 15:35:49 by ezahiri          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,7 +57,7 @@ char	*read_check(char *name)
 	all = NULL;
 	fd = open(name, O_RDONLY);
 	if (fd == -1)
-		exit(1);
+		(ft_putendl_fd("Error opening the file", 2), exit(1));
 	while (1)
 	{
 		s = get_next_line(fd);
