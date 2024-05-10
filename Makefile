@@ -12,7 +12,6 @@ SRCS	=	srcs/main.c \
 			srcs/flood_fill.c \
 			srcs/memfree.c \
 			srcs/errorhandle.c \
-			srcs/load_wind.c \
 			srcs/xpm_put.c \
 
 SRCS_B	=	BONUS/main_bonus.c \
@@ -38,7 +37,19 @@ NAME_BONUS = so_long_bonus
 
 DIR_LIB = libft/libft.a
 
-all: $(NAME)
+LOAD = loading
+
+END = end  
+
+
+
+all:  $(NAME) 
+
+$(END) :
+	@printf $(GREEN)]$(RESET)'\n'
+
+$(LOAD) :
+	@printf $(GREEN)loading[ .$(RESET)
 
 BONUS/%.o: BONUS/%.c BONUS/so_long_bonus.h
 	@$(CC) $(CFLAGS) -c $< -o $@
@@ -48,8 +59,8 @@ BONUS/%.o: BONUS/%.c BONUS/so_long_bonus.h
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf $(GREEN).$(RESET)
 
-$(NAME) : $(OBJS) $(DIR_LIB)
-	@$(CC) -lmlx -framework OpenGL -framework AppKit  $(CFLAGS) $^ -o $(NAME) $(DIR_LIB)
+$(NAME) : $(LOAD) $(OBJS) $(END) $(DIR_LIB)
+	@$(CC) -lmlx -framework OpenGL -framework AppKit  $(CFLAGS) $(OBJS) -o $(NAME) $(DIR_LIB)
 
 $(NAME_BONUS) :$(OBJS_B) $(DIR_LIB)
 	@$(CC) -lmlx -framework OpenGL -framework AppKit  $(CFLAGS) $(OBJS_B) -o $(NAME_BONUS) $(DIR_LIB)
@@ -68,3 +79,5 @@ fclean: clean
 	@make -C libft/ fclean
 
 re : fclean all 
+
+.PHONY : $(LOAD) $(END)
