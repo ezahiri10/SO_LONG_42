@@ -59,7 +59,7 @@ clean:
 	@rm -f $(OBJS) $(OBJS_B)
 	@make -C libft/ clean
 
-fclean: clean
+fclean: clean 
 	@rm -f $(NAME) $(NAME_BONUS)
 	@make -C libft/ fclean
 
