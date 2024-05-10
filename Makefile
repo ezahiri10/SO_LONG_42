@@ -1,5 +1,7 @@
 CC = cc
-
+RED='\033[0;31m'
+GREEN='\033[0;32m'
+RESET='\033[0m'
 CFLAGS = -Wall -Wextra -Werror -Wunreachable-code
 
 SRCS	=	srcs/main.c \
@@ -40,9 +42,11 @@ all: $(NAME)
 
 BONUS/%.o: BONUS/%.c BONUS/so_long_bonus.h
 	@$(CC) $(CFLAGS) -c $< -o $@
+	@printf $(GREEN).$(RESET)
 
 %.o: %.c so_long.h
 	@$(CC) $(CFLAGS) -c $< -o $@
+	@printf $(GREEN).$(RESET)
 
 $(NAME) : $(OBJS) $(DIR_LIB)
 	@$(CC) -lmlx -framework OpenGL -framework AppKit  $(CFLAGS) $^ -o $(NAME) $(DIR_LIB)
