@@ -55,7 +55,7 @@ bonus: $(NAME_BONUS)
 $(DIR_LIB):
 	@make -C libft/
 
-clean:
+clean: 
 	@rm -f $(OBJS) $(OBJS_B)
 	@make -C libft/ clean
 
