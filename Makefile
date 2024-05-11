@@ -60,9 +60,9 @@ BONUS/%.o: BONUS/%.c BONUS/so_long_bonus.h
 	@printf $(GREEN).$(RESET)
 
 $(NAME) : $(LOAD) $(OBJS) $(END) $(DIR_LIB)
-	@$(CC) -lmlx -framework OpenGL -framework AppKit  $(CFLAGS) $(OBJS) -o $(NAME) $(DIR_LIB)
+	@$(CC) -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit  $(CFLAGS) $(OBJS) -o $(NAME) $(DIR_LIB)
 
-$(NAME_BONUS) :$(OBJS_B) $(DIR_LIB)
+$(NAME_BONUS) : $(LOAD) $(OBJS_B)  $(END) $(DIR_LIB)
 	@$(CC) -lmlx -framework OpenGL -framework AppKit  $(CFLAGS) $(OBJS_B) -o $(NAME_BONUS) $(DIR_LIB)
 
 bonus: $(NAME_BONUS)
