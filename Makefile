@@ -37,33 +37,36 @@ NAME_BONUS = so_long_bonus
 
 DIR_LIB = libft/libft.a
 
-LOAD = loading
+LOAD = 1
 
-END = end  
+END = end
 
-
+MLX =  -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit
 
 all:  $(NAME) 
 
 $(END) :
 	@printf $(GREEN)]$(RESET)'\n'
 
-$(LOAD) :
-	@printf $(GREEN)loading[ .$(RESET)
+$(LOAD):
+    ifeq ($(LOAD),1)
+		@printf $(GREEN)loading[...$(RESET)
+		@$(eval LOAD s= 3)
+    endif
 
 BONUS/%.o: BONUS/%.c BONUS/so_long_bonus.h
 	@$(CC) $(CFLAGS) -c $< -o $@
-	@printf $(GREEN).$(RESET)
+	@printf $(GREEN)....$(RESET)
 
 %.o: %.c so_long.h
 	@$(CC) $(CFLAGS) -c $< -o $@
 	@printf $(GREEN).$(RESET)
 
 $(NAME) : $(LOAD) $(OBJS) $(END) $(DIR_LIB)
-	@$(CC) -L /usr/local/lib -lmlx -framework OpenGL -framework AppKit  $(CFLAGS) $(OBJS) -o $(NAME) $(DIR_LIB)
+	@$(CC) $(MLX)  $(CFLAGS) $(OBJS) -o $(NAME) $(DIR_LIB)
 
 $(NAME_BONUS) : $(LOAD) $(OBJS_B)  $(END) $(DIR_LIB)
-	@$(CC) -lmlx -framework OpenGL -framework AppKit  $(CFLAGS) $(OBJS_B) -o $(NAME_BONUS) $(DIR_LIB)
+	@$(CC) $(MLX)  $(CFLAGS) $(OBJS_B) -o $(NAME_BONUS) $(DIR_LIB)
 
 bonus: $(NAME_BONUS)
 
